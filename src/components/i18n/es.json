@@ -1,8 +1,15 @@
 {
     "title": "Play Factory",
+    "navBar": {
+        "home": "Inicio",
+        "documentation": "Documentación",
+        "github": "GitHub",
+        "contact": "Contacto"
+    },
     "hero": {
         "title1": "Simple aplicación de escritorio",
         "title2": "para editar",
         "title3": "música"
-    }
+    },
+    "download": "Descarga"
 }

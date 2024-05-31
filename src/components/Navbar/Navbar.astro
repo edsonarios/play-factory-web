@@ -1,7 +1,154 @@
 ---
-import SelectI18N from "../i18n/SelectI18n.astro";
+import ArrowLink from "./IconArrowLink.astro";
+import { getI18N } from "../i18n";
+import SelectI18n from "../i18n/SelectI18n.astro";
+import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
+import ButtonDownload from "./ButtonDownload.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const lang = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+
+const { showLogo = true, cls = "" } = Astro.props;
+const navbarLinks = [
+  {
+    name: `${i18n.navBar.home}`,
+    href: "/",
+  },
+  {
+    name: `${i18n.navBar.github}`,
+    href: "https://github.com/edsonarios/play",
+  },
+  {
+    name: 'LinkedIn',
+    href: "https://www.linkedin.com/in/edson-a%C3%B1awaya/",
+  },
+];
 ---
 
-<section>
-  <SelectI18N />
-</section>
+<nav
+  class={`navbar top-0 w-full h-36 md:h-24 flex flex-col justify-center items-center md:sticky bg-customDarkBg1 bg-customDarkBgTransparent z-40 backdrop-blur-xl ${cls}`}
+>
+  <div
+    class={`2xl:w-[1280px] xl:w-10/12 w-11/12 flex flex-col md:flex-row ${showLogo === true ? "justify-around" : "justify-end"}`}
+  >
+    <a
+      class={`flex h-full place-self-center ml-32 sm:ml-28 md:ml-0
+      ${showLogo === true ? "" : "inline-flex flex-wrap md:hidden"}`}
+      href={translatePath("/")}
+    >
+      <div class="relative w-80">
+        <!-- <img
+          src="/icons/eDev.webp"
+          alt="play full logo"
+          class="navIconPlay left-[127px] smaller-logo"
+          id="navbarLogo"
+        /> -->
+        <img
+          src="/icons/eDev.webp"
+          alt="play small logo"
+          class="navIconPlay left-0 original-logo"
+          id="navbarLogo"
+          transition:name="logo"
+        />
+        <img
+          src="/icons/iconPlayFactory.png"
+          alt="play small logo"
+          class="w-12 ml-32"
+          id=""
+          transition:name="logo"
+        />
+      </div>
+    </a>
+
+    <div
+      class="flex flex-col sm:flex-row h-full mt-14 md:mt-0 justify-center"
+      transition:name="navbar"
+    >
+      <div class="flex flex-row justify-center items-center h-full">
+        {
+          navbarLinks.map(({ name, href }) => {
+            const isExternal = href.startsWith("http");
+            return (
+              <a
+                aria-label={name}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
+                href={isExternal ? href: translatePath(href)}
+                class="navbar-link flex"
+              >
+                {name}
+                {isExternal && <ArrowLink />}
+              </a>
+            );
+          })
+        }
+      </div>
+      <div class="flex flex-row items-center justify-center pt-2 sm:pt-0">
+        <SelectI18n />
+        <ButtonDownload />
+      </div>
+    </div>
+  </div>
+</nav>
+<style>
+  nav {
+    top: 0px;
+    animation: adjust-header linear both;
+    animation-timeline: scroll();
+    animation-range: 0 400px;
+  }
+
+  @keyframes adjust-header {
+    to {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      height: 60px;
+      box-shadow:
+        0px 5px 50px -5px rgba(172, 172, 172, 0.1),
+        0px 0px 0 1px rgba(0, 0, 0, 0.3);
+    }
+  }
+  .navbar-link {
+    @apply text-white text-base leading-6 mr-4 ml-4 2xl:mr-6 2xl:ml-6 cursor-pointer font-normal md:font-medium hover:scale-110 transition duration-300 h-full pt-2;
+  }
+
+  .navIconPlay {
+    @apply h-10 absolute top-0 hover:scale-105 transition-all ease-in-out duration-300;
+  }
+
+  .original-logo {
+    opacity: 1;
+    /* opacity: 0.1; */
+  }
+
+  .smaller-logo {
+    opacity: 0;
+    /* opacity: 0.5; */
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", function () {
+    const originalLogo = document.querySelector(
+      ".original-logo"
+    ) as HTMLImageElement;
+    const smallLogo = document.querySelector(".smaller-logo") as HTMLElement;
+    if (!originalLogo || !smallLogo) return;
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 80) {
+        originalLogo.style.opacity = "0";
+        originalLogo.style.zIndex = "5";
+        smallLogo.style.opacity = "1";
+        smallLogo.style.zIndex = "10";
+      } else {
+        originalLogo.style.opacity = "1";
+        originalLogo.style.zIndex = "10";
+        smallLogo.style.opacity = "0";
+        smallLogo.style.zIndex = "5";
+      }
+    });
+  });
+</script>
