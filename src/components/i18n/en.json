@@ -11,5 +11,11 @@
         "title2": "to edit",
         "title3": "Music"
     },
-    "download": "Download"
+    "download": "Download",
+    "downloadIn": "Download in",
+    "otherPlatforms": {
+        "title": "Other Platforms",
+        "lastVersion": "Last Version: 1.0.0",
+        "download": "Download"
+    }
 }

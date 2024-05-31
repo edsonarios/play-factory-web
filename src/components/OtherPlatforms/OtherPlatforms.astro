@@ -1,0 +1,71 @@
+---
+import Download from "./Download.astro";
+import Linux from "./Linux.astro";
+import Mac from "./Mac.astro";
+import Windows from "./Windows.astro";
+import { getI18N } from "../i18n";
+import { linuxLink, macLink, windowsLink } from "@/utils/binariesLinks";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+const platforms = [
+  {
+    name: "Windows (x64)",
+    icon: Windows,
+    bg: "#2d74d7",
+    textColor: "#ffffff",
+    link: windowsLink,
+  },
+  {
+    name: "Mac (Universal)",
+    icon: Mac,
+    bg: "#eeeeee",
+    textColor: "#111",
+    link: macLink,
+  },
+  {
+    name: "Linux (.deb)",
+    icon: Linux,
+    bg: "#ffd81b",
+    textColor: "#111",
+    link: linuxLink,
+  },
+];
+---
+
+<section class="body-font">
+  <div class="container px-5 mt-10 mx-auto">
+
+    <div class="animate-slide-in-top">
+      <div class="flex flex-col justify-center items-center mt-6 mb-10">
+        <h2 class="text-lg title-font font-medium">
+          {i18n.otherPlatforms.lastVersion}
+        </h2>
+      </div>
+      <div
+        class="flex flex-col md:flex-row sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6 items-center w-full justify-center gap-x-36"
+      >
+        {
+          platforms.map((platform) => (
+            <div class="p-2  flex flex-row md:flex-col text-center items-center">
+              <div class="mr-12 md:mr-0">
+                <platform.icon />
+              </div>
+              <div class="flex-grow items-center md:mt-10">
+                <h2 class="text-lg title-font font-medium">{platform.name}</h2>
+                <a
+                  class={`md:mt-3 text-indigo-400 inline-flex items-center hover:scale-105 transition-all gap-2 px-4 py-2`}
+                  style={{ backgroundColor: platform.bg, color: platform.textColor}}
+                  rel="noopener noreferrer"
+                  href={platform.link}
+                >
+                  {i18n.otherPlatforms.download}
+                  <Download />
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>

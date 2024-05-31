@@ -11,5 +11,11 @@
         "title2": "para editar",
         "title3": "música"
     },
-    "download": "Descarga"
+    "download": "Descarga",
+    "downloadIn": "Descarga en",
+    "otherPlatforms": {
+        "title": "Otras Plataformas",
+        "lastVersion": "Última Versión: 1.0.0",
+        "download": "Descargar"
+    }
 }
