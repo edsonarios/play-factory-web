@@ -1,13 +1,16 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Bg from "../Bg.astro";
-// import { getI18N } from "../i18n/index.ts"
+import Hero from "../Hero/Hero.astro";
+import Navbar from "../Navbar/Navbar.astro";
+import { getI18N } from "../i18n/index.ts"
 
 const { currentLocale } = Astro
-// const i18n = getI18N({ currentLocale })
+const i18n = getI18N({ currentLocale })
 ---
 
-<!-- <Layout title={i18n.title}> -->
-<Layout title={'astro'}>
+<Layout title={i18n.title}>
   <Bg />
+  <Navbar />
+  <Hero />
 </Layout>
