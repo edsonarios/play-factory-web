@@ -1,6 +1,8 @@
 {
     "title": "Play Factory",
     "hero": {
-        "title": "Simple aplicación de escritorio para editar música"
+        "title1": "Simple aplicación de escritorio",
+        "title2": "para editar",
+        "title3": "música"
     }
 }

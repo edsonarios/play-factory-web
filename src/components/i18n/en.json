@@ -1,6 +1,8 @@
 {
     "title": "Play Factory",
     "hero": {
-        "title": "Simple Desktop Application to Edit Music"
+        "title1": "Simple desktop application",
+        "title2": "to edit",
+        "title3": "Music"
     }
 }
