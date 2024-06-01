@@ -5,12 +5,12 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<section class="flex flex-row p-4 items-center justify-around">
-  <div data-aos={"fade-right"} class="p-4">
-    <h1 class="text-6xl">
+<section class="flex flex-col md:flex-row p-4 items-center justify-around">
+  <div data-aos={"fade-right"} class="p-4 text-center md:text-left">
+    <h1 class="text-5xl md:text-6xl">
       {i18n.title}
     </h1>
-    <div class="mt-8 text-3xl text-balance">
+    <div class="mt-8 text-2xl md:text-3xl text-balance">
       <p>{i18n.hero.title1}</p>
       <p>{i18n.hero.title2} <strong class="text-fblue">{i18n.hero.title3}</strong></p>
     </div>
@@ -19,6 +19,6 @@ const i18n = getI18N({ currentLocale });
     data-aos={"fade-left"}
     src="/icons/hero.png"
     alt="Play Factory Logo"
-    class="mt-6 rounded-md w-full max-w-[900px] shadow-lg shadow-fblue"
+    class="rounded-md w-full max-w-[700px] lg:max-w-[800px] xl:max-w-[900px] shadow-lg shadow-fblue"
   />
 </section>
