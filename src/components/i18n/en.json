@@ -22,16 +22,16 @@
         "title": "Explore and discover all the features that",
         "title2": "can offer you",
         "feature1": {
-            "title": "Play all your music",
-            "description": "Discover different ways to play your favorite music easily and simply"
+            "title": "Precise and Controlled Editing",
+            "description": "Cut songs precisely by selecting the exact start and end. Use the buttons to adjust your final edit second by second"
         },
         "feature2": {
-            "title": "All your playlists in one place",
-            "description": "View all your playlists, edit them as you wish in an orderly and simple way"
+            "title": "Volume and Format Adjustment",
+            "description": "Increase or decrease the volume and convert files to popular formats like mp3, mp4, mkv and more. All with simple settings"
         },
         "feature3": {
-            "title": "Organize your music as you like it",
-            "description": "Organize your music the way you like it and always have it at hand"
+            "title": "Comparison and Dual Playback",
+            "description": "Compare the original and edited version in real time with dual player mode. Check for edits before saving"
         }
     },
     "footer": {

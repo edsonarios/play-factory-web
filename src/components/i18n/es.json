@@ -22,16 +22,16 @@
         "title": "Explora y descubre todas las funcionalidades que",
         "title2": "puede ofrecerte",
         "feature1": {
-            "title": "Reproduce toda tu música",
-            "description": "Descubre diferentes formas de reproducir tu música favorita de manera fácil y sencilla"
+            "title": "Edición Precisa y Controlada",
+            "description": "Corta canciones con precisión seleccionando el inicio y el final exactos. Utiliza los botones para ajustar segundo a segundo tu edición final."
         },
         "feature2": {
-            "title": "Todas tus listas de reproducción en un solo lugar",
-            "description": "Visualiza todas tus listas de reproducción, editalas a placer de manera ordenada y sencilla"
+            "title": "Ajuste de Volumen y Formatos",
+            "description": "Aumenta o disminuye el volumen y convierte archivos a formatos populares como mp3, mp4, mkv y más. Todo con simples ajustes."
         },
         "feature3": {
-            "title": "Organiza tu música como quieras",
-            "description": "Organiza tu música de la manera que más te guste y tenla siempre a la mano"
+            "title": "Comparación y Reproducción Dual",
+            "description": "Compara la versión original y editada en tiempo real con el modo de doble reproductor. Verifica ediciones antes de guardarlas."
         }
     },
     "footer": {

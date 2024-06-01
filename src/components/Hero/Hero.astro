@@ -5,7 +5,7 @@ const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 ---
 
-<section class="flex flex-row p-8 items-center justify-around">
+<section class="flex flex-row p-4 items-center justify-around">
   <div data-aos={"fade-right"} class="p-4">
     <h1 class="text-6xl">
       {i18n.title}
@@ -19,6 +19,6 @@ const i18n = getI18N({ currentLocale });
     data-aos={"fade-left"}
     src="/icons/hero.png"
     alt="Play Factory Logo"
-    class="mt-6 rounded-md w-full max-w-[800px] shadow-lg shadow-fblue"
+    class="mt-6 rounded-md w-full max-w-[900px] shadow-lg shadow-fblue"
   />
 </section>
