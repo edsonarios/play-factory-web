@@ -1,0 +1,47 @@
+---
+import { appName } from "../../utils/constants";
+import { getI18N } from "../i18n";
+import Section from "./Section.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const mainFeatures = [
+  {
+    title: `${i18n.mainFeatures.feature1.title}`,
+    description: `${i18n.mainFeatures.feature1.description}`,
+    src: "feature-1.mp4",
+  },
+  {
+    title: `${i18n.mainFeatures.feature2.title}`,
+    description: `${i18n.mainFeatures.feature2.description}`,
+    src: "feature-2.mp4",
+  },
+  {
+    title: `${i18n.mainFeatures.feature3.title}`,
+    description: `${i18n.mainFeatures.feature3.description}`,
+    src: "feature-3.mp4",
+  },
+];
+---
+
+<section class="mt-40 text-center">
+  <!-- Title -->
+  <h2 class="mb-20 text-2xl md:text-6xl text-balance">
+    {i18n.mainFeatures.title}
+    <strong class="text-fblue">{appName}</strong>
+    {i18n.mainFeatures.title2}
+  </h2>
+  <!-- Features -->
+  {
+    mainFeatures.map((feature, index) => {
+      return (
+        <Section
+          index={index}
+          title={feature.title}
+          description={feature.description}
+          src={feature.src}
+        />
+      );
+    })
+  }
+</section>

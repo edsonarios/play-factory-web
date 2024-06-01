@@ -6,7 +6,7 @@ const i18n = getI18N({ currentLocale });
 ---
 
 <section class="flex flex-row p-8 items-center justify-around">
-  <div class="p-4">
+  <div data-aos={"fade-right"} class="p-4">
     <h1 class="text-6xl">
       {i18n.title}
     </h1>
@@ -16,6 +16,7 @@ const i18n = getI18N({ currentLocale });
     </div>
   </div>
   <img
+    data-aos={"fade-left"}
     src="/icons/hero.png"
     alt="Play Factory Logo"
     class="mt-6 rounded-md w-full max-w-[800px] shadow-lg shadow-fblue"

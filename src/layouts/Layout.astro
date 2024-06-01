@@ -79,3 +79,10 @@ const lang = getLangFromUrl(Astro.url);
     background: #898989;
   }
 </style>
+
+<script>
+  import { aosInit } from "../utils/aos.script";
+  document.addEventListener("astro:page-load", function () {
+    aosInit();
+  });
+</script>

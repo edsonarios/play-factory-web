@@ -34,7 +34,6 @@ const platforms = [
 
 <section class="body-font">
   <div class="container px-5 mt-10 mx-auto">
-
     <div class="animate-slide-in-top">
       <div class="flex flex-col justify-center items-center mt-6 mb-10">
         <h2 class="text-lg title-font font-medium">
@@ -54,7 +53,10 @@ const platforms = [
                 <h2 class="text-lg title-font font-medium">{platform.name}</h2>
                 <a
                   class={`md:mt-3 text-indigo-400 inline-flex items-center hover:scale-105 transition-all gap-2 px-4 py-2`}
-                  style={{ backgroundColor: platform.bg, color: platform.textColor}}
+                  style={{
+                    backgroundColor: platform.bg,
+                    color: platform.textColor,
+                  }}
                   rel="noopener noreferrer"
                   href={platform.link}
                 >
@@ -69,3 +71,32 @@ const platforms = [
     </div>
   </div>
 </section>
+
+<!-- Animatation Other Platforms icons -->
+<script>
+  let cont = 0;
+  document.addEventListener("astro:page-load", function () {
+    const svgs = document.querySelectorAll(".icon-animated");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (cont >= 3) return;
+            (entry.target as HTMLElement).style.animation = "none";
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                (entry.target as HTMLElement).style.animation =
+                  "dash 1s ease-in forwards";
+              });
+              cont++;
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.8,
+      }
+    );
+    svgs.forEach((svg) => observer.observe(svg));
+  });
+</script>

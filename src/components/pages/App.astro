@@ -5,6 +5,7 @@ import Hero from "../Hero/Hero.astro";
 import ButtonDownload from "../MainDownload/ButtonDownload.astro";
 import Navbar from "../Navbar/Navbar.astro";
 import OtherPlatforms from "../OtherPlatforms/OtherPlatforms.astro";
+import MainFeatures from "../MainFeatures/MainFeatures.astro";
 import { getI18N } from "../i18n/index.ts"
 
 const { currentLocale } = Astro
@@ -17,4 +18,5 @@ const i18n = getI18N({ currentLocale })
   <Hero />
   <ButtonDownload />
   <OtherPlatforms />
+  <MainFeatures />
 </Layout>

@@ -17,5 +17,21 @@
         "title": "Otras Plataformas",
         "lastVersion": "Última Versión: 1.0.0",
         "download": "Descargar"
+    },
+    "mainFeatures": {
+        "title": "Explora y descubre todas las funcionalidades que",
+        "title2": "puede ofrecerte",
+        "feature1": {
+            "title": "Reproduce toda tu música",
+            "description": "Descubre diferentes formas de reproducir tu música favorita de manera fácil y sencilla"
+        },
+        "feature2": {
+            "title": "Todas tus listas de reproducción en un solo lugar",
+            "description": "Visualiza todas tus listas de reproducción, editalas a placer de manera ordenada y sencilla"
+        },
+        "feature3": {
+            "title": "Organiza tu música como quieras",
+            "description": "Organiza tu música de la manera que más te guste y tenla siempre a la mano"
+        }
     }
 }
