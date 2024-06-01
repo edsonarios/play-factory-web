@@ -1,0 +1,166 @@
+---
+import E from "./IconE.astro";
+import LinkedIn from "./IconLinkedIn.astro";
+import GitHub from "./IconGitHub.astro";
+import { appName, urlMainWeb, urlLinkedin, urlGithub, urlPlayFactoryWeb, urlPlayWeb, mainRepository, issuesRepository, discussionsRepository } from "../../utils/constants";
+import { getI18N } from "../i18n";
+import ButtonDownload from "./ButtonDownload.astro";
+import ArrowLink from "./IconArrowLink.astro";
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+
+const socialMedias = {
+  title: i18n.footer.socialMedias,
+  items: [
+    {
+      name: "eDev",
+      icon: E,
+      url: `${urlMainWeb}`,
+    },
+    {
+      name: "LinkedIn",
+      icon: LinkedIn,
+      url: `${urlLinkedin}`,
+    },
+    {
+      name: "GitHub",
+      icon: GitHub,
+      url: `${urlGithub}`,
+    },
+  ],
+};
+
+const ourProducts = {
+  title: i18n.footer.products.title,
+  items: [
+    {
+      name: i18n.footer.products.mainPage,
+      url: `${urlMainWeb}`,
+    },
+    {
+      name: i18n.footer.products.play,
+      url: `${urlPlayWeb}`,
+    },
+    {
+      name: i18n.footer.products.playFactory,
+      url: `${urlPlayFactoryWeb}`,
+    },
+    {
+      name: i18n.footer.products.eterminal,
+      url: "/inProgress",
+    },
+  ],
+};
+const resources = {
+  title: i18n.footer.options.title,
+  items: [
+    {
+      name: i18n.footer.options.mainRepository,
+      url: `${mainRepository}`,
+    },
+    {
+      name: i18n.footer.options.issues,
+      url: `${issuesRepository}`,
+    },
+    {
+      name: i18n.footer.options.discussions,
+      url: `${discussionsRepository}`,
+    },
+  ],
+};
+---
+
+<footer
+  class="footer text-white flex flex-col items-center justify-between mt-12 bg-[#1c1d25] h-full bottom-0 w-full"
+>
+  <ButtonDownload />
+
+  <div
+    class="w-full pt-10 lg:pt-20 lg:pb-12 bg-customDarkBg1 radius-for-skewed"
+  >
+    <div
+      class="container mx-auto px-4 w-4/5 md:w-11/12 lg:w-10/12 xl:w-4/5 2xl:w-2/3"
+    >
+      <div class="flex flex-col md:flex-row justify-between">
+        <div class="w-full lg:w-1/3 mb-16 lg:mb-0 ">
+          <div
+            class="flex lg:justify-start items-center justify-center grow basis-0 flex-col"
+          >
+            <img src="/icons/iconPlayFactory.png" class="w-16 mb-4 self-center" alt="play icon" />
+            <h3 class="text-white mr-2 text-2xl flex">
+              {socialMedias.title}
+              <ArrowLink size="20" />
+            </h3>
+          </div>
+          <div class="mx-auto lg:mx-0 mt-4 flex flex-row w-full items-center justify-center">
+            {
+              socialMedias.items.map((socialMedia) => (
+                <a
+                  class="w-10 h-10 mr-2 p-2 hover:bg-gray-700 rounded-xl"
+                  aria-label={socialMedia.name}
+                  target="_blank"
+                  href={socialMedia.url}
+                >
+                  <socialMedia.icon />
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div class="w-full lg:w-2/3 lg:pl-16 lg:flex flex-wrap justify-between">
+          <div class="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
+            <h3 class="mb-6 text-2xl font-bold text-white flex">
+              {ourProducts.title}
+              <ArrowLink size="20" />
+            </h3>
+            <ul>
+              {
+                ourProducts.items.map((item) => (
+                  <li class="mb-4">
+                    <a
+                      class="text-gray-400 hover:text-gray-300"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={item.url}
+                      aria-label={item.name}
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+          <div class="w-full md:w-1/3 lg:w-auto mb-16 md:mb-0">
+            <h3 class="mb-6 text-2xl font-bold text-white flex">
+              {resources.title}
+              <ArrowLink size="20" />
+            </h3>
+            <ul>
+              {
+                resources.items.map((item, i) => (
+                  <li class="mb-4">
+                    <a
+                      class="text-gray-400 hover:text-gray-300"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={item.url}
+                      aria-label=""
+                    >
+                      {item.name}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p
+        class="text-center text-sm text-gray-100 border-t border-[rgb(255,255,255,0.2)] pt-6 md:pt-12 md:mt-16 block mb-8"
+      >
+        &copy; 2024 {appName} - MIT license.
+      </p>
+    </div>
+  </div>
+</footer>

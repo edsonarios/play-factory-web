@@ -33,5 +33,22 @@
             "title": "Organiza tu música como quieras",
             "description": "Organiza tu música de la manera que más te guste y tenla siempre a la mano"
         }
+    },
+    "footer": {
+        "title": "Vamos, dale una oportunidad",
+        "socialMedias": "Redes Sociales",
+        "products": {
+            "title": "Nuestros Productos",
+            "mainPage": "Página Principal",
+            "play": "Play",
+            "playFactory": "Play Factory",
+            "eterminal": "E-Terminal"
+        },
+        "options": {
+            "title": "Recursos",
+            "mainRepository": "Repositorio Principal",
+            "issues": "Reporta Problemas o Propone Nuevas Funcionalidades",
+            "discussions": "Discusiones"
+        }
     }
 }

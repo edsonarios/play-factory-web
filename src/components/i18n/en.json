@@ -33,5 +33,22 @@
             "title": "Organize your music as you like it",
             "description": "Organize your music the way you like it and always have it at hand"
         }
+    },
+    "footer": {
+        "title": "Let's go, give it a try",
+        "socialMedias": "Social Medias",
+        "products": {
+            "title": "Our Products",
+            "mainPage": "Main Page",
+            "play": "Play",
+            "playFactory": "Play Factory",
+            "eterminal": "E-Terminal"
+        },
+        "options": {
+            "title": "Resources",
+            "mainRepository": "Main Repository",
+            "issues": "Report Issues or Propose New Features",
+            "discussions": "Discussions"
+        }
     }
 }
