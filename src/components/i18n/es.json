@@ -22,16 +22,16 @@
         "title": "Explora y descubre todas las funcionalidades que",
         "title2": "puede ofrecerte",
         "feature1": {
-            "title": "Edición Precisa y Controlada",
-            "description": "Corta canciones con precisión seleccionando el inicio y el final exactos. Utiliza los botones para ajustar segundo a segundo tu edición final."
+            "title": "Fácil Inicio de la Aplicación",
+            "description": "Detecta automáticamente si FFmpeg está instalado en tu PC. Si no, permite buscar manualmente el binario o descargarlo y configurarlo automáticamente para un uso inmediato"
         },
         "feature2": {
-            "title": "Ajuste de Volumen y Formatos",
-            "description": "Aumenta o disminuye el volumen y convierte archivos a formatos populares como mp3, mp4, mkv y más. Todo con simples ajustes."
+            "title": "Edición y Ajustes Precisos",
+            "description": "Corta canciones con precisión seleccionando el inicio y el final exactos. Ajusta el volumen y convierte archivos a formatos populares como mp3, mp4, mkv y más, todo con simples ajustes"
         },
         "feature3": {
             "title": "Comparación y Reproducción Dual",
-            "description": "Compara la versión original y editada en tiempo real con el modo de doble reproductor. Verifica ediciones antes de guardarlas."
+            "description": "Compara la versión original y editada en tiempo real con el modo de doble reproductor. Verifica ediciones antes de guardarlas"
         }
     },
     "footer": {
