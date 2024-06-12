@@ -4,6 +4,7 @@ import { getI18N } from "../i18n";
 import SelectI18n from "../i18n/SelectI18n.astro";
 import { getLangFromUrl, useTranslatedPath } from "../i18n/utils";
 import ButtonDownload from "./ButtonDownload.astro";
+import { mainRepository, urlLinkedin } from "@/utils/constants";
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
 
@@ -18,11 +19,11 @@ const navbarLinks = [
   },
   {
     name: `${i18n.navBar.github}`,
-    href: "https://github.com/edsonarios/play",
+    href: `${mainRepository}`,
   },
   {
     name: 'LinkedIn',
-    href: "https://www.linkedin.com/in/edson-a%C3%B1awaya/",
+    href: `${urlLinkedin}`,
   },
 ];
 ---
