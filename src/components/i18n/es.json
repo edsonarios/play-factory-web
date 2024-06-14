@@ -9,7 +9,8 @@
     "hero": {
         "title1": "Simple aplicación de escritorio",
         "title2": "para editar",
-        "title3": "música"
+        "title3": "música",
+        "ffmpeg": "UI para usar FFmpeg"
     },
     "download": "Descarga",
     "downloadIn": "Descarga en",
